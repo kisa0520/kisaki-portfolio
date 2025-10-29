@@ -1,0 +1,94 @@
+:root {
+  --sky: #f2f8f9;
+  --ink: #3a3a3a;
+  --accent: #a7c8c2;
+  --soft-border: rgba(0, 0, 0, 0.05);
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* ベース設定 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--sky);
+  font-family: "Zen Maru Gothic", "Hiragino Mincho ProN", serif;
+  color: var(--ink);
+  line-height: 1.8;
+}
+
+/* コンテナ */
+.container {
+  width: min(960px, 92%);
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+/* タイトル */
+.section-title {
+  font-size: 28px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 24px;
+  border-bottom: 1px dashed var(--soft-border);
+  padding-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* 画像スタイル */
+.container img {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--shadow);
+  margin-bottom: 32px;
+  transition: transform 0.3s ease;
+}
+.container img:hover {
+  transform: scale(1.02);
+}
+
+/* 段落スタイル */
+.container p {
+  font-size: 17px;
+  margin-bottom: 28px;
+  color: #4a4a4a;
+  background: rgba(255,255,255,0.6);
+  padding: 12px 18px;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+}
+
+/* 強調 */
+strong {
+  color: var(--accent);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 720px) {
+  .section-title {
+    font-size: 22px;
+  }
+  .container p {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+}
+
+/*波のアレンジ*/
+.wave-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('wave.svg') repeat-x;
+  background-size: cover;
+  opacity: 0.05;
+  z-index: -1;
+  animation: waveMove 30s linear infinite;
+}
+
+@keyframes waveMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
